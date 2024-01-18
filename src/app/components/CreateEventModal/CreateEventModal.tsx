@@ -57,8 +57,6 @@ export const CreateEventModal = ({openModal, handleModalClose, timeZoneEvent}: I
             }
 
           }))
-
-
     } catch (error) {
       console.log(error);
     }
@@ -91,7 +89,11 @@ export const CreateEventModal = ({openModal, handleModalClose, timeZoneEvent}: I
           onChange={( e ) => setTitle( e.target.value )}
         />
 
-        <button type='submit' onClick={onSubmit} className="w-full border rounded border-cyan-500 mt-2 py-1.5 hover:bg-cyan-500 hover:text-white">
+        <button
+          type='submit'
+          onClick={onSubmit}
+          className="w-full border rounded border-cyan-500 mt-2 py-1.5 hover:bg-cyan-500 hover:text-white"
+        >
           Create Event
         </button>
       </div>

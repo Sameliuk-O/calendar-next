@@ -1,9 +1,11 @@
 'use client'
+import { useEffect } from 'react';
+
+import { observer, Provider } from 'mobx-react';
+
+import eventStore, { IEvents } from '@/app/store/eventStore';
 import { CalendarBlock } from '@/app/components/CalendarBlock';
 import { handleFetchEvents } from '@/app/requests/handleFetchEvents';
-import eventStore, { IEvents } from '@/app/store/eventStore';
-import { observer, Provider } from 'mobx-react';
-import { useEffect } from 'react';
 import { Header } from './components/Header';
 
 const Home = observer(() => {

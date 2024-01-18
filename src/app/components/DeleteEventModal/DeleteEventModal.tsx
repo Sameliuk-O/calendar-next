@@ -10,11 +10,11 @@ interface DeleteEventModalProps {
 }
 
 export const DeleteEventModal = ( { openModal, handleModalClose, event }: DeleteEventModalProps) => {
-
 	const onSubmit = () => {
 		const data = {
 			id: event._id,
 		};
+
 		fetch("/api/events", {
 			method: "DELETE",
 			headers: {
@@ -34,9 +34,20 @@ export const DeleteEventModal = ( { openModal, handleModalClose, event }: Delete
 	}
 
 	return (
-		<ModalBlock isOpen={openModal} onClose={() => handleModalClose(false)} title={'Delete Event ' + event?.title}>
-			<h2>Do you really want to delete this event?</h2>
-			<button onClick={onSubmit} className="py-2 px-5 my-3 bg-red-600 rounded-xl text-white hover:bg-red-900">Delete</button>
+		<ModalBlock
+			isOpen={openModal}
+			onClose={() => handleModalClose(false)}
+			title={'Delete Event ' + event?.title}
+		>
+			<h2>
+				Do you really want to delete this event?
+			</h2>
+			<button
+				onClick={onSubmit}
+				className="py-2 px-5 my-3 bg-red-600 rounded-xl text-white hover:bg-red-900"
+			>
+				Delete
+			</button>
 		</ModalBlock>
 	)
 }

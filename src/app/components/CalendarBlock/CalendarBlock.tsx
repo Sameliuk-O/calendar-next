@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-import "react-big-calendar/lib/css/react-big-calendar.css";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import { getDay, startOfWeek } from 'date-fns';
 import { format } from 'date-fns/format';
 import { enUS } from 'date-fns/locale';
 import { parse } from 'date-fns/parse';
+import "react-big-calendar/lib/css/react-big-calendar.css";
 
 import { CreateEventModal } from '@/app/components/CreateEventModal';
 import { DeleteEventModal } from '../DeleteEventModal';
@@ -127,8 +127,16 @@ export const CalendarBlock = ({ events, height }: CustomCalendarProps) => {
 				style={{ height: height ? height : "68vh" }}
 			/>
 
-			<CreateEventModal openModal={openModal} handleModalClose={handleModalClose} timeZoneEvent={event} />
-			<DeleteEventModal openModal={openDeleteModal} handleModalClose={setOpenDeleteModal} event={data}/>
+			<CreateEventModal
+				openModal={openModal}
+				handleModalClose={handleModalClose}
+				timeZoneEvent={event}
+			/>
+			<DeleteEventModal
+				openModal={openDeleteModal}
+				handleModalClose={setOpenDeleteModal}
+				event={data}
+			/>
 		</>
 	);
 };
