@@ -7,7 +7,8 @@ import { useEffect } from 'react';
 import { Header } from './components/Header';
 
 const Home = observer(() => {
-    const {events} = eventStore
+  const {events} = eventStore;
+
   useEffect(() => {
     handleFetchEvents().then((res: any) => {
       if (res) {
@@ -27,13 +28,14 @@ const Home = observer(() => {
   });
 
   const handleDownloadClick = () => {
+    calendarEvents.map(el => {
+      el.duration = (el.end.getTime() - el.start.getTime()) / 60000;
+    })
 
     const blob = new Blob([JSON.stringify(calendarEvents, null, 2)], { type: "application/json" });
-
     const downloadLink = document.createElement("a");
     downloadLink.href = URL.createObjectURL(blob);
     downloadLink.download = "data.json";
-
     downloadLink.click();
   };
 
@@ -45,6 +47,6 @@ const Home = observer(() => {
       </main>
     </Provider>
   );
-} );
+});
 
 export default Home;

@@ -5,6 +5,7 @@ export interface IEvents {
 	title: string;
 	start: string;
 	end: string;
+	duration?: number;
 }
 
 class EventStore {
