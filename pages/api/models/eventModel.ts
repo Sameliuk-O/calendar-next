@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
 
-
 const Schema = mongoose.Schema;
+
 mongoose.Promise = global.Promise;
+
 const eventSchema = new Schema(
   {
     title: {

@@ -1,1 +1,1 @@
-export {ModalBlock} from './ModalBlock'
+export { ModalBlock } from './ModalBlock'

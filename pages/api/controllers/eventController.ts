@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import { Event } from '../models/eventModel';
 
 export const getEvents = async (req: any, res: any) => {
